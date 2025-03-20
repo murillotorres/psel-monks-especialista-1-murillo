@@ -1,0 +1,4 @@
+node_modules/
+backend/wp-content/uploads/
+backend/wp-config.php
+db_data/
