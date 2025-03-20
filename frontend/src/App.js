@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import GlobalStyles from './styles/GlobalStyles.js';
 import api from "./services/api";
+import Banner from "./components/Banner";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -11,15 +13,10 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>Posts do WordPress</h1>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title.rendered}</h2>
-          <p dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-        </div>
-      ))}
-    </div>
+    <>
+      <GlobalStyles />
+      <Banner />
+    </>
   );
 }
 
