@@ -26,6 +26,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
     volumes:
       - ./backend:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
     ports:
       - "8000:80"
 
