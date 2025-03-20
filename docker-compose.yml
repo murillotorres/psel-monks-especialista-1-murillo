@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: monks-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    container_name: monks-wordpress
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./backend:/var/www/html
+    ports:
+      - "8000:80"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    container_name: monks-phpmyadmin
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8080:80"
+
+volumes:
+  db_data:
