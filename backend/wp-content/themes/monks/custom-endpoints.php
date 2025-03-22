@@ -25,3 +25,23 @@ function register_custom_routes() {
 }
 
 add_action('rest_api_init', 'register_custom_routes');
+
+
+
+function register_acf_options_endpoint() {
+    register_rest_route( '/wp/v2', '/site-config', [
+        'methods'             => 'GET',
+        'callback'            => 'get_acf_site_config',
+        'permission_callback' => '__return_true',
+    ]);
+}
+add_action( 'rest_api_init', 'register_acf_options_endpoint' );
+
+function get_acf_site_config() {
+    $site_config = get_fields('option');
+    if ($site_config) {
+        return rest_ensure_response($site_config);
+    } else {
+        return rest_ensure_response([]);
+    }
+}
