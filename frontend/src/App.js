@@ -7,6 +7,7 @@ import Section3 from './components/Section3';
 import AppDownload from "./components/AppDownload.js";
 import TagSection from "./components/TagSection.js";
 import Articles from "./components/Articles.js";
+import Form from "./components/Form.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -26,6 +27,7 @@ function App() {
       <AppDownload />
       <TagSection />
       <Articles />
+      <Form />
     </>
   );
 }
