@@ -9,6 +9,7 @@ import TagSection from "./components/TagSection.js";
 import Articles from "./components/Articles.js";
 import Form from "./components/Form.js";
 import Footer from "./components/Footer.js";
+import Header from "./components/Header.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -22,6 +23,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <Header />
       <Banner />
       <Section2 />
       <Section3 />

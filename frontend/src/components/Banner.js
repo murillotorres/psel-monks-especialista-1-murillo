@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const BannerSection = styled.section`
   .banner {
     background-color: #2D2D2D;
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom:150px;
     overflow:hidden;
     border-radius:0px 0px 30px 30px;
@@ -33,7 +33,7 @@ const BannerSection = styled.section`
     height: auto;
     display: block;
     position:absolute;
-    top:-100px;
+    top:-120px;
     right:0px;
   }
 `;

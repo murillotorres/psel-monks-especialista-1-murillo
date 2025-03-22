@@ -1,6 +1,5 @@
 <?php
-function get_footer_menu() {
-    $menu_name = 'footer';
+function get_menu_items($menu_name) {
     $menu_items = wp_get_nav_menu_items($menu_name);
     $menu_data = [];
 
@@ -13,10 +12,24 @@ function get_footer_menu() {
         }
     }
 
-    return rest_ensure_response($menu_data);
+    return $menu_data;
+}
+
+function get_header_menu() {
+    return rest_ensure_response(get_menu_items('header'));
+}
+
+function get_footer_menu() {
+    return rest_ensure_response(get_menu_items('footer'));
 }
 
 function register_custom_routes() {
+    register_rest_route('/wp/v2', '/header-menu', [
+        'methods'  => 'GET',
+        'callback' => 'get_header_menu',
+        'permission_callback' => '__return_true'
+    ]);
+
     register_rest_route('/wp/v2', '/footer-menu', [
         'methods'  => 'GET',
         'callback' => 'get_footer_menu',
@@ -25,7 +38,6 @@ function register_custom_routes() {
 }
 
 add_action('rest_api_init', 'register_custom_routes');
-
 
 
 function register_acf_options_endpoint() {
