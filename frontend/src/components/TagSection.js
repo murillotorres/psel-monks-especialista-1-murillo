@@ -13,7 +13,7 @@ const TagSectionWrapper = styled.section`
     margin-bottom: 30px;
     font-weight:500;
   }
-
+  
   .tagsection-app {
     display: flex;
     flex-wrap: wrap;

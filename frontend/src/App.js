@@ -6,6 +6,7 @@ import Section2 from './components/Section2';
 import Section3 from './components/Section3';
 import AppDownload from "./components/AppDownload.js";
 import TagSection from "./components/TagSection.js";
+import Articles from "./components/Articles.js";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -24,6 +25,7 @@ function App() {
       <Section3 />
       <AppDownload />
       <TagSection />
+      <Articles />
     </>
   );
 }
