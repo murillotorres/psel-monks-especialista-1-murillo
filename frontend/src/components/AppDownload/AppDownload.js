@@ -35,7 +35,7 @@ function AppDownload() {
                 <img src={appStoreImg} alt="Download na App Store" />
               </a>
               <a href={appData.app_download_google_play} target="_blank" rel="noopener noreferrer">
-                <img src={googlePlayImg} alt="Download no Google Play" />
+                <img src={googlePlayImg} alt="Download no Google Play" style={{ borderRadius: "10px" }} />
               </a>
             </div>
           </div>
