@@ -9,6 +9,20 @@ function Form() {
   const [formValues, setFormValues] = useState({ name: '', email: '', phone: '', city: '', honeypot: '' });
   const [message, setMessage] = useState(null);
 
+
+  // Função para aplicar a máscara no telefone
+  const handlePhoneChange = (e) => {
+    let phone = e.target.value.replace(/\D/g, ''); // Remove qualquer coisa que não seja número
+    if (phone.length <= 2) {
+      phone = `(${phone}`;
+    } else if (phone.length <= 6) {
+      phone = `(${phone.slice(0, 2)}) ${phone.slice(2)}`;
+    } else {
+      phone = `(${phone.slice(0, 2)}) ${phone.slice(2, 7)}-${phone.slice(7, 11)}`;
+    }
+    setFormValues({ ...formValues, phone });
+  };
+
   useEffect(() => {
     api.get('pages/7?acf_format=standard')
       .then((response) => {
@@ -86,7 +100,7 @@ function Form() {
                 <input type="text" name="honeypot" value={formValues.honeypot} onChange={handleChange} style={{ display: "none" }} autoComplete="off" tabIndex="-1" aria-hidden="true" />
                 <input className="input" type="text" name="name" required placeholder="Nome*" value={formValues.name} onChange={handleChange} />
                 <input className="input" type="email" name="email" required placeholder="E-mail*" value={formValues.email} onChange={handleChange} />
-                <input className="input sp_cellphones" type="text" name="phone" placeholder="Telefone" value={formValues.phone} onChange={handleChange} />
+                <input className="input" type="text" name="phone" placeholder="Telefone" value={formValues.phone} onChange={handlePhoneChange} />
                 <input className="input" type="text" name="city" placeholder="Cidade" value={formValues.city} onChange={handleChange} />
 
                 <div className="captcha">
