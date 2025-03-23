@@ -4,13 +4,6 @@ export const TagSectionWrapper = styled.section`
   .tagsection {
     margin-bottom:60px;
   }
-
-  h2 {
-    font-size: 40px;
-    color: #2D2D2D;
-    margin-bottom: 30px;
-    font-weight:500;
-  }
   
   .tagsection-app {
     display: flex;

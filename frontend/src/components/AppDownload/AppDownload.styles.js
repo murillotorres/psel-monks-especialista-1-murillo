@@ -20,10 +20,8 @@ export const AppDownloadWrapper = styled.section`
     padding-right:50px;
   }
 
-  h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-    font-weight:500;
+  .content h2 {
+    color:#fff;
   }
 
   p {
@@ -88,18 +86,17 @@ export const AppDownloadWrapper = styled.section`
     }
   }
 
-    @media (max-width: 650px) {
-      .links {
-        display:block;
-      }
-      
-      .links a {
-        margin:auto;
-        width:200px;
-        margin-bottom:10px;
-      }
-
+  @media (max-width: 650px) {
+    .links {
+      display:block;
     }
+    
+    .links a {
+      margin:auto;
+      width:200px;
+      margin-bottom:10px;
+    }
+  }
 
 
 `;

@@ -5,14 +5,6 @@ export const Section2Section = styled.section`
   .section2 {
     padding: 60px 0px;
   }
-  
-  .section2 h2 {
-    font-size:40px;
-    font-weight:500;
-    color:#2D2D2D;
-    margin-bottom:10px;
-    line-height:1.2;
-  }
 
   .section2 p {
     color:#2D2D2D;

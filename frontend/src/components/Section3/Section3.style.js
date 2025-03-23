@@ -18,14 +18,6 @@ export const Section3Wrapper = styled.section`
     box-sizing:border-box;
   }
 
-  h2 {
-    font-size:40px;
-    font-weight:500;
-    color:#2D2D2D;
-    margin-bottom:10px;
-    line-height:1.2;
-  }
-
   p {
     color:#2D2D2D;
     font-size:24px;

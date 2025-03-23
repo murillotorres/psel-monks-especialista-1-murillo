@@ -45,14 +45,6 @@ export const FormWrapper = styled.section`
     max-width:851px;
   }
 
-  h2 {
-    font-size:40px;
-    font-weight:500;
-    color:#2D2D2D;
-    margin-bottom:10px;
-    line-height:1.2;
-  }
-
   p {
     color:#2D2D2D;
     font-size:20px;
