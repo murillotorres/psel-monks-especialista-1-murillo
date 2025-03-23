@@ -12,3 +12,6 @@ require_once get_template_directory() . '/functions/custom-endpoints.php';
 
 // FORMULÁRIO DE CONTATO
 include 'functions/form.php';
+
+// DEIXA A EXPERIÊNCIA DE USAR O WORDPRESS MAIS COMPATÍVEL COM O FRONTEND EM REACT
+include 'functions/disabled-functions.php';
