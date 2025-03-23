@@ -34,4 +34,28 @@ export const BannerSection = styled.section`
     top:-120px;
     right:0px;
   }
+
+  @media (max-width: 1380px) {
+    .img {
+      right:-30px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .img {
+      right:-200px;
+    }
+    
+    h1 {
+      max-width:500px;
+    }
+
+    p {
+      max-width:500px;
+    }
+  }
+
+
+
+
 `;

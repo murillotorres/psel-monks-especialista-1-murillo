@@ -60,13 +60,14 @@ export const Section3Wrapper = styled.section`
     box-shadow: 0px 5px 10px 0px #0000004a;
   }
 
-  @media (max-width: 768px) {
-    .section3-app {
-      flex-direction: column;
+  @media (max-width: 1100px) {
+    .img-space-full {
+      height: 300px;
     }
-
-    .col-6 {
-      width: 100%;
+    
+    .img-space-medium {
+      height: 266px;
     }
   }
+
 `;

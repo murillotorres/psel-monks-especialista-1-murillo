@@ -16,7 +16,7 @@ export const AppDownloadWrapper = styled.section`
 
   .text {
     margin-bottom: 20px;
-    width:calc(100% - 217px;)
+    width:calc(100% - 217px);
     padding-right:50px;
   }
 
@@ -36,13 +36,31 @@ export const AppDownloadWrapper = styled.section`
     width:217px;
   }
 
-    .links a {
-        display:block;
-        margin-bottom:5px;
-    }
+  .links a {
+    display:block;
+    margin-bottom:5px;
+  }
 
   .links img {
     width: 100%;
     height: auto;
+  }
+
+  @media (max-width: 1100px) {
+    .content {
+      justify-content: space-between;
+    }
+
+    .text {
+      width:calc(100% - 250px);
+    }
+
+    .links {
+      width: 200px;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 `;

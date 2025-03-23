@@ -60,4 +60,10 @@ export const Section2Section = styled.section`
     padding:0px 8px 10px 8px;
     font-weight:300;
   }
+
+  @media (max-width: 1100px) {
+    .section2-app-item {
+      width: calc(50% - 20px);
+    }
+  }
 `;

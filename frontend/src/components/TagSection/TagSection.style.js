@@ -30,4 +30,11 @@ export const TagSectionWrapper = styled.section`
     font-weight: 600;
     border: 1px solid #7D26C9;
   }
+
+  @media (max-width: 1100px) {
+    .tagsection-app {
+      max-width:100%;
+      gap:15px;
+    }
+  }
 `;

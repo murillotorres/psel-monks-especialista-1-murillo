@@ -34,4 +34,16 @@ export const HeaderContainer = styled.header`
     font-size: 20px;
     font-weight:300;
   }
+    
+  @media (max-width: 1100px) {
+  .logo img {
+    height:20px;
+  }
+
+  .menu a {
+    font-size:17px;
+  }
+  .menu {
+    gap: 20px;
+  }
 `;

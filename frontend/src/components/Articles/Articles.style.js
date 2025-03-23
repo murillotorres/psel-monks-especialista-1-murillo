@@ -32,7 +32,7 @@ export const ArticlesWrapper = styled.section`
     margin-bottom: 15px;
   }
 
-    p {
+  p {
     color:#2D2D2D; 
     font-size:20px;
     line-height:30px;
@@ -51,4 +51,21 @@ export const ArticlesWrapper = styled.section`
     font-size:16px;
     font-weight:600;
   }
+
+  @media (max-width: 1100px) {
+    .articles-app {
+      gap:10px;
+    }
+
+    .item {
+      width: calc(33.3% - 10px);
+    }
+    
+    p {
+      font-size:18px;
+      line-height:25px;
+    }
+
+
+  } 
 `;

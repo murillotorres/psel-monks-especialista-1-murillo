@@ -166,4 +166,25 @@ export const FormWrapper = styled.section`
    .btn:disabled {
     opacity:0.7;
    }
+
+  @media (max-width: 1100px) {
+    .img {
+      width:100%;
+      margin-bottom:40px;
+      max-width:100%;
+    }
+
+    .img img {
+      margin:auto;
+      display:block;
+    }
+
+    .form-app {
+      display:block;
+    }
+    .form-box {
+      max-width:100%;
+    }
+    
+  }
 `;
