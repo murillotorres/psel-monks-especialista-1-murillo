@@ -9,3 +9,6 @@ include 'functions/site-config.php';
 
 // ENDPOINTS PERSONALIZADOS NA API REST 
 require_once get_template_directory() . '/functions/custom-endpoints.php';
+
+// FORMULÁRIO DE CONTATO
+include 'functions/form.php';

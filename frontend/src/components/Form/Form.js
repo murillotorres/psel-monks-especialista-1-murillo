@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
-import { FormWrapper } from './Form.style'
+import { FormWrapper } from './Form.style';
 
 function Form() {
   const [formData, setFormData] = useState(null);
   const [captchaResult, setCaptchaResult] = useState('');
   const [captchaNumbers, setCaptchaNumbers] = useState({ num1: 0, num2: 0 });
+  const [formValues, setFormValues] = useState({ name: '', email: '', phone: '', city: '', honeypot: '' });
+  const [message, setMessage] = useState(null);
 
   useEffect(() => {
     api.get('pages/7?acf_format=standard')
@@ -19,18 +21,44 @@ function Form() {
   }, []);
 
   const generateCaptcha = () => {
-    const num1 = Math.floor(Math.random() * 50) + 1;
-    const num2 = Math.floor(Math.random() * 50) + 1;
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
     setCaptchaNumbers({ num1, num2 });
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (parseInt(captchaResult) !== captchaNumbers.num1 + captchaNumbers.num2) {
-      alert('Verificação de segurança incorreta!');
+      setMessage({ type: 'error', text: 'Verificação de segurança incorreta!' });
       return;
     }
-    alert('Formulário enviado com sucesso!');
+    
+    try {
+      const userIP = await fetch("https://api64.ipify.org?format=json")
+        .then(res => res.json())
+        .then(data => data.ip)
+        .catch(() => "0.0.0.0"); // Se falhar, define um IP genérico
+    
+      const response = await api.post('form-submit', formValues, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Form-Token': 'MONKS2025@',
+          'X-User-IP': userIP
+        }
+      });
+    
+      setMessage({ type: 'success', text: response.data.message });
+      setFormValues({ name: '', email: '', phone: '', city: '', honeypot: ''});
+      setCaptchaResult('');
+      generateCaptcha();
+    } catch (error) {
+      setMessage({ type: 'error', text: 'Erro ao enviar o formulário. Tente novamente!' });
+      console.error("Erro ao enviar formulário:", error);
+    }
   };
 
   if (!formData) {
@@ -50,11 +78,16 @@ function Form() {
               <p>{formData.form_description}</p>
               <span>{formData.form_support_text}</span>
 
+              {message && (
+                <div className={`message ${message.type}`}>{message.text}</div>
+              )}
+
               <form onSubmit={handleSubmit}>
-                <input className="input" type="text" required placeholder="Nome*" />
-                <input className="input" type="email" required placeholder="E-mail*" />
-                <input className="input sp_cellphones" type="text" placeholder="Telefone" />
-                <input className="input" type="text" placeholder="Cidade" />
+                <input type="text" name="honeypot" value={formValues.honeypot} onChange={handleChange} style={{ display: "none" }} autoComplete="off" tabIndex="-1" aria-hidden="true" />
+                <input className="input" type="text" name="name" required placeholder="Nome*" value={formValues.name} onChange={handleChange} />
+                <input className="input" type="email" name="email" required placeholder="E-mail*" value={formValues.email} onChange={handleChange} />
+                <input className="input sp_cellphones" type="text" name="phone" placeholder="Telefone" value={formValues.phone} onChange={handleChange} />
+                <input className="input" type="text" name="city" placeholder="Cidade" value={formValues.city} onChange={handleChange} />
 
                 <div className="captcha">
                   <span>Verificação de Segurança</span>
