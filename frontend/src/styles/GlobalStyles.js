@@ -33,8 +33,11 @@ h2 {
 	.container {
 		padding:0 30px
 	}
-}
 
+	h2 {
+		font-size:30px;
+	}
+}
 
 `;
 

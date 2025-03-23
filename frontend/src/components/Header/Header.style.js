@@ -37,6 +37,13 @@ export const HeaderContainer = styled.header`
     text-decoration: none;
     font-size: 20px;
     font-weight:300;
+    transition: 0.5s;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .menu a:hover {
+    color: #dfbbfe;
+    border-bottom: 1px solid #dfbbfe;
   }
 
   .scrollback {
@@ -127,6 +134,11 @@ export const HeaderContainer = styled.header`
       font-size:20px;
       padding:15px 30px;
       font-weight:500;
+    }
+
+    .menu a:hover {
+      color: #2D2D2D;
+      border-bottom: 1px solid transparent;
     }
 
     .scrollback {

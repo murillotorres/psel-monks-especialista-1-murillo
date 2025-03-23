@@ -26,8 +26,8 @@ function AppDownload() {
           <div className="container">
             <div className="content">
               <div className="text">
-                <Skeleton width={600} height={48} baseColor="#510b85" highlightColor="#6c14ad" style={{ marginBottom: "10px" }} />
-                <Skeleton width={300} height={72} baseColor="#510b85" highlightColor="#6c14ad" />
+                <Skeleton width={600} height={48} baseColor="#510b85" highlightColor="#6c14ad" style={{ marginBottom: "10px", maxWidth: "100%" }} />
+                <Skeleton width={300} height={72} baseColor="#510b85" highlightColor="#6c14ad" style={{ maxWidth: "100%" }} />
               </div>
               <div className="links">
                 <Skeleton width="100%" height={64} baseColor="#510b85" highlightColor="#6c14ad" style={{ marginBottom: "10px" }} />

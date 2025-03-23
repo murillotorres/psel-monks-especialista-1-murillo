@@ -90,7 +90,7 @@ function Form() {
           <div className="container">
             <div className="form-app">
               <div className="img">
-                <Skeleton width={315} height={302} baseColor="#454545" highlightColor="#676767" />
+                <Skeleton width={315} height={302} baseColor="#454545" highlightColor="#676767" style={{ maxWidth: "100%" }}  />
               </div>
               <div className="form-box">
                 <Skeleton width="80%" height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "0px" }} />

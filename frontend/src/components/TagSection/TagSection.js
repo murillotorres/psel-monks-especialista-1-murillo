@@ -22,7 +22,7 @@ function TagSection() {
       <TagSectionWrapper>
       <div className="tagsection">
         <div className="container">
-          <Skeleton width={600} height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "30px" }} />
+          <Skeleton width={600} height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "30px", maxWidth: "100%" }} />
           <Skeleton width="100%" height={172} baseColor="#cdcbc6" highlightColor="#e1dcd1" />
         </div>
       </div>

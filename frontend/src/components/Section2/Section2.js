@@ -22,8 +22,8 @@ function Section2() {
       <Section2Section>
         <div className="section2">
           <div className="container">
-            <Skeleton width={600} height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "10px" }} />
-            <Skeleton width={400} height={27} baseColor="#cdcbc6" highlightColor="#e1dcd1" />
+            <Skeleton width={600} height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "10px", maxWidth: "100%" }} />
+            <Skeleton width={400} height={27} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ maxWidth: "100%" }}  />
             <div className="section2-app">
               {[...Array(4)].map((_, index) => (
                 <div key={index} className="section2-app-item">

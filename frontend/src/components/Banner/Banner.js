@@ -23,10 +23,10 @@ function Banner() {
       <div className="banner">
         <div className="container">
           <h1>
-            {bannerData ? bannerData.banner_title : <Skeleton width={600} height={102} baseColor="#454545" highlightColor="#676767" />}
+            {bannerData ? bannerData.banner_title : <Skeleton width={600} height={102} baseColor="#454545" highlightColor="#676767" style={{ maxWidth: "100%" }}  />}
           </h1>
           <p>
-            {bannerData ? bannerData.banner_description : <Skeleton width={200} height={110} baseColor="#454545" highlightColor="#676767"  />}
+            {bannerData ? bannerData.banner_description : <Skeleton width={200} height={110} baseColor="#454545" highlightColor="#676767" style={{ maxWidth: "100%" }}  />}
           </p>
           {bannerData?.banner_image && ( <img src={bannerData.banner_image} alt="Imagem do banner" className="img" /> )}
           <img src={scroll} alt="Scroll" className="scroll" />

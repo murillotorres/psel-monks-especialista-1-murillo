@@ -155,8 +155,13 @@ export const FormWrapper = styled.section`
     transitions:0.5s
    }
 
-   .btn:disabled {
+  .btn:hover {
+    background:#b582e1;
+  }
+  
+  .btn:disabled {
     opacity:0.7;
+    background: #DFBBFE !important;
    }
 
   @media (max-width: 1100px) {

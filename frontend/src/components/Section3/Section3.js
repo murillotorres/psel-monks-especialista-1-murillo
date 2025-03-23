@@ -24,7 +24,7 @@ function Section3() {
           <div className="container">
             <div className="section3-app">
               <div className="col-6">
-                <Skeleton width={600} height={96} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "10px" }} />
+                <Skeleton width={600} height={96} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "10px", maxWidth: "100%" }} />
                 <Skeleton width="80%" height={62} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "30px" }} />
                 <Skeleton width="100%" height={523} baseColor="#cdcbc6" highlightColor="#e1dcd1" />
               </div>

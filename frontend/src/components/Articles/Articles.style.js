@@ -50,6 +50,11 @@ export const ArticlesWrapper = styled.section`
     margin-top:20px;
     font-size:16px;
     font-weight:600;
+    transition:0.5s;
+  }
+
+  .btn:hover {
+    background:#b582e1;
   }
 
   @media (max-width: 1100px) {
