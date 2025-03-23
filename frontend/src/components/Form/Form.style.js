@@ -6,7 +6,19 @@ export const FormWrapper = styled.section`
     background-color: #2D2D2D;
     padding: 60px 0;
   }
+  .form-app .message {
+    display: block;
+    text-align: center; 
+    color: #fff; padding: 13px 20px; border-radius: 5px; margin-bottom: 20px;
+  }
 
+  .form-app .success {
+  background:#4caf50;
+  }
+
+  .form-app .error {
+    background:#f44336;
+  }
   .form-app {
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +85,12 @@ export const FormWrapper = styled.section`
     font-size: 16px;
     height:42px;
     color:#777777;
+    transition:0.5s;
+    outline: 1px solid #ffffff;
   }
+  .input:focus {
+    outline: 1px solid #b3b3b3;
+  } 
 
   .captcha {
     display: flex;
@@ -142,5 +159,11 @@ export const FormWrapper = styled.section`
     font-size: 16px;
     font-weight: 600;
     border:none;
+    cursor:pointer;
+    transitions:0.5s
+   }
+
+   .btn:disabled {
+    opacity:0.7;
    }
 `;

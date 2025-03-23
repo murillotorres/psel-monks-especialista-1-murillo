@@ -52,7 +52,7 @@ function validate_form_token($request) {
 // Manipular envio do formulário
 function handle_form_submission(WP_REST_Request $request) {
     if (!validate_form_token($request)) {
-        return new WP_REST_Response(['message' => 'Unauthorized'], 401);
+        return new WP_REST_Response(['message' => 'Erro ao enviar mensagem: Não autorizado.'], 401);
     }
 
     global $wpdb;
@@ -67,11 +67,11 @@ function handle_form_submission(WP_REST_Request $request) {
 
     $honeypot = $request->get_param('honeypot');
     if (!empty($honeypot)) {
-        return new WP_REST_Response(['message' => 'Spam detected'], 400);
+        return new WP_REST_Response(['message' => 'Erro ao enviar mensagem: Muitas requisições em pouco tempo.'], 400);
     }
 
     if (empty($name) || empty($email)) {
-        return new WP_REST_Response(['message' => 'Name and email are required'], 400);
+        return new WP_REST_Response(['message' => 'Preencha o nome e e-mail.'], 400);
     }
 
     // Verifica se o IP já fez muitas requisições no último minuto
@@ -91,7 +91,7 @@ function handle_form_submission(WP_REST_Request $request) {
             'user_ip'    => $ip
         ]);
 
-        return new WP_REST_Response(['message' => 'Form submitted successfully'], 200);
+        return new WP_REST_Response(['message' => 'Mensagem enviada com sucesso!'], 200);
     }
 }
 
