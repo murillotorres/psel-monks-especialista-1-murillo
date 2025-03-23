@@ -44,36 +44,43 @@ function Form() {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (parseInt(captchaResult) !== captchaNumbers.num1 + captchaNumbers.num2) {
-      setMessage({ type: 'error', text: 'Verificação de segurança incorreta!' });
-      return;
-    }
-    
-    try {
-      const userIP = await fetch("https://api64.ipify.org?format=json")
-        .then(res => res.json())
-        .then(data => data.ip)
-        .catch(() => "0.0.0.0"); // Se falhar, define um IP genérico
-    
-      const response = await api.post('form-submit', formValues, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Form-Token': 'MONKS2025@',
-          'X-User-IP': userIP
-        }
-      });
-    
-      setMessage({ type: 'success', text: response.data.message });
-      setFormValues({ name: '', email: '', phone: '', city: '', honeypot: ''});
-      setCaptchaResult('');
-      generateCaptcha();
-    } catch (error) {
-      setMessage({ type: 'error', text: 'Erro ao enviar o formulário. Tente novamente!' });
-      console.error("Erro ao enviar formulário:", error);
-    }
-  };
+  e.preventDefault();
+  if (parseInt(captchaResult) !== captchaNumbers.num1 + captchaNumbers.num2) {
+    setMessage({ type: 'error', text: 'Verificação de segurança incorreta!' });
+    return;
+  }
+
+  setIsSubmitting(true); // Desativa o botão e mostra "Enviando.."
+
+  try {
+    const userIP = await fetch("https://api64.ipify.org?format=json")
+      .then(res => res.json())
+      .then(data => data.ip)
+      .catch(() => "0.0.0.0");
+
+    const response = await api.post('form-submit', formValues, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Form-Token': 'MONKS2025@',
+        'X-User-IP': userIP
+      }
+    });
+
+    setMessage({ type: 'success', text: response.data.message });
+    setFormValues({ name: '', email: '', phone: '', city: '', honeypot: '' });
+    setCaptchaResult('');
+    generateCaptcha();
+  } catch (error) {
+    setMessage({ type: 'error', text: 'Erro ao enviar o formulário. Tente novamente!' });
+    console.error("Erro ao enviar formulário:", error);
+  } finally {
+    setIsSubmitting(false); // Reativa o botão após envio
+  }
+};
+
 
   if (!formData) {
     return <div>Carregando...</div>;
@@ -111,16 +118,9 @@ function Form() {
                     <div className="numbers">{captchaNumbers.num2}</div>
                   </div>
                   <div className="equal">=</div>
-                  <input
-                    className="input result"
-                    type="text"
-                    required
-                    placeholder="Resultado*"
-                    value={captchaResult}
-                    onChange={(e) => setCaptchaResult(e.target.value)}
-                  />
+                  <input className="input result" type="text" required placeholder="Resultado*" value={captchaResult} onChange={(e) => setCaptchaResult(e.target.value)} />
                 </div>
-                <input type="submit" value="Enviar" className="btn" />
+                <input type="submit" value={isSubmitting ? "Enviando..." : "Enviar"} className="btn" disabled={isSubmitting} />
               </form>
             </div>
           </div>
