@@ -75,5 +75,26 @@ export const BannerSection = styled.section`
     }
   }
 
+  @media (max-width: 768px) {
+    .banner {
+      border-radius:0px;
+      padding-bottom:100px;
+      padding-top:80px;
+    }
+
+    .img {
+      top:-216px;
+    }
+
+    h1 {
+      font-size:30px;
+      max-width:235px;
+    }
+
+    p {
+      font-size:15px;
+      max-width:195px;
+    }
+  }
 
 `;
