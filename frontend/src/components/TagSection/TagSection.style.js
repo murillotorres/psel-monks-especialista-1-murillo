@@ -4,7 +4,9 @@ export const TagSectionWrapper = styled.section`
   .tagsection {
     margin-bottom:60px;
   }
-  
+  h2 {
+    margin-bottom:30px;
+  }
   .tagsection-app {
     display: flex;
     flex-wrap: wrap;

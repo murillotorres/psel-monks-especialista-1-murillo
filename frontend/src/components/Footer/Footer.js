@@ -5,6 +5,8 @@ import twitter from '../../assets/image/twitter.svg';
 import instagram from '../../assets/image/instagram.svg';
 import whatsapp from '../../assets/image/whatsapp.svg';
 import { FooterContainer } from "./Footer.style";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Footer() {
   const [menuItems, setMenuItems] = useState([]);
@@ -47,6 +49,21 @@ function Footer() {
     { name: 'twitter', icon: twitter },
     { name: 'whatsapp', icon: whatsapp },
   ];
+
+  if (menuItems.length === 0 || !socialLinks.facebook) {
+    return (
+      <FooterContainer>
+        <div className="container">
+          <div className="social">
+            {socialMedia.map((social, index) => (
+              <Skeleton width={32} height={32} circle={true} baseColor="#454545" highlightColor="#676767" />
+            ))}
+          </div>
+          <Skeleton width="100%" height={62} baseColor="#454545" highlightColor="#676767" />
+        </div>
+      </FooterContainer>
+    );
+  }
 
   return (
     <FooterContainer>

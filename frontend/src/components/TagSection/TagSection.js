@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { TagSectionWrapper } from './TagSection.style';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function TagSection() {
   const [tagsData, setTagsData] = useState(null);
@@ -16,7 +18,16 @@ function TagSection() {
   }, []);
 
   if (!tagsData) {
-    return <div>Carregando...</div>;
+    return (
+      <TagSectionWrapper>
+      <div className="tagsection">
+        <div className="container">
+          <Skeleton width={600} height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "30px" }} />
+          <Skeleton width="100%" height={172} baseColor="#cdcbc6" highlightColor="#e1dcd1" />
+        </div>
+      </div>
+    </TagSectionWrapper>
+    )
   }
 
   return (

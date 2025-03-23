@@ -3,6 +3,8 @@ import api from "../../api/axios";
 import { HeaderContainer } from "./Header.style";
 import menuMobile from "../../assets/image/menu-mobile.svg";
 import scrollBack from "../../assets/image/scroll-back.svg";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Header() {
   const [logo, setLogo] = useState("");
@@ -38,7 +40,11 @@ function Header() {
       <div className="container">
         <div className={`content ${isMenuOpen ? "content-active" : ""}`}>
           <a href="/" className="logo">
-            {logo && <img src={logo} alt="Logotipo" />}
+            {logo ? (
+              <img src={logo} alt="Logotipo" />
+            ) : (
+              <Skeleton width={140} height={24} baseColor="#454545" highlightColor="#676767" /> 
+            )}
           </a>
           <div className="menu-mobile" onClick={toggleMenu}>
             <img src={menuMobile} alt="Menu Mobile" />
@@ -46,9 +52,18 @@ function Header() {
         </div>
         <nav>
           <div className={`menu ${isMenuOpen ? "active-menu" : ""}`}>
-            {menuItems.map((item, index) => (
-              <a key={index} href={item.url}>{item.title}</a>
-            ))}
+            {menuItems.length === 0 ? (
+              <>
+                <Skeleton width={100} height={22} baseColor="#454545" highlightColor="#676767" />
+                <Skeleton width={100} height={22} baseColor="#454545" highlightColor="#676767" />
+                <Skeleton width={100} height={22} baseColor="#454545" highlightColor="#676767" />
+                <Skeleton width={100} height={22} baseColor="#454545" highlightColor="#676767" />
+              </>
+            ) : (
+              menuItems.map((item, index) => (
+                <a key={index} href={item.url}>{item.title}</a>
+              ))
+            )}
             <img src={scrollBack} alt="Scroll Back" className="scrollback" onClick={closeMenu} />
           </div>
         </nav>

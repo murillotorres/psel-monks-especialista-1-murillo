@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { FormWrapper } from './Form.style';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Form() {
   const [formData, setFormData] = useState(null);
@@ -81,9 +83,26 @@ function Form() {
   }
 };
 
-
   if (!formData) {
-    return <div>Carregando...</div>;
+    return (
+      <FormWrapper>
+        <div className="form">
+          <div className="container">
+            <div className="form-app">
+              <div className="img">
+                <Skeleton width={315} height={302} baseColor="#454545" highlightColor="#676767" />
+              </div>
+              <div className="form-box">
+                <Skeleton width="80%" height={48} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "0px" }} />
+                <Skeleton width="75%" height={26} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "0px" }} />
+                <Skeleton width="50%" height={17} baseColor="#cdcbc6" highlightColor="#e1dcd1" style={{ marginBottom: "15px" }} />
+                <Skeleton width="100%" height={145} baseColor="#cdcbc6" highlightColor="#e1dcd1" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </FormWrapper>
+    );
   }
 
   return (

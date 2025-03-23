@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { BannerSection } from "./Banner.styles";
 import scroll from "../../assets/image/scroll-down.svg";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Banner() {
   const [bannerData, setBannerData] = useState(null);
@@ -16,21 +18,17 @@ function Banner() {
       });
   }, []);
 
-  if (!bannerData) {
-    return <div>Carregando...</div>;
-  }
-
   return (
     <BannerSection>
       <div className="banner">
         <div className="container">
-          <h1>{bannerData.banner_title}</h1>
-          <p>{bannerData.banner_description}</p>
-          {bannerData.banner_image ? (
-            <img src={bannerData.banner_image} alt="Imagem do banner" className="img" />
-          ) : (
-            <div>Imagem não disponível</div>
-          )}
+          <h1>
+            {bannerData ? bannerData.banner_title : <Skeleton width={600} height={102} baseColor="#454545" highlightColor="#676767" />}
+          </h1>
+          <p>
+            {bannerData ? bannerData.banner_description : <Skeleton width={200} height={110} baseColor="#454545" highlightColor="#676767"  />}
+          </p>
+          {bannerData?.banner_image && ( <img src={bannerData.banner_image} alt="Imagem do banner" className="img" /> )}
           <img src={scroll} alt="Scroll" className="scroll" />
         </div>
       </div>

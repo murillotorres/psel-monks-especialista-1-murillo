@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { ArticlesWrapper } from './Articles.style';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 function Articles() {
   const [articlesData, setArticlesData] = useState(null);
@@ -16,7 +18,31 @@ function Articles() {
   }, []);
 
   if (!articlesData) {
-    return <div>Carregando...</div>;
+    return (
+      <ArticlesWrapper>
+      <div className="articles">
+        <div className="container">
+          <div className="articles-app">
+            <div className="item">
+              <Skeleton width="100%" height={27} style={{ marginBottom: "15px" }}  />
+              <Skeleton width="75%" height={120} style={{ marginBottom: "20px" }}  />
+              <Skeleton width="50%" height={43}  />
+            </div>
+            <div className="item">
+              <Skeleton width="100%" height={27} style={{ marginBottom: "15px" }}  />
+              <Skeleton width="75%" height={120} style={{ marginBottom: "20px" }}  />
+              <Skeleton width="50%" height={43}  />
+            </div>
+            <div className="item">
+              <Skeleton width="100%" height={27} style={{ marginBottom: "15px" }}  />
+              <Skeleton width="75%" height={120} style={{ marginBottom: "20px" }}  />
+              <Skeleton width="50%" height={43}  />
+            </div>
+          </div>
+        </div>
+      </div>
+    </ArticlesWrapper>
+    )
   }
 
   return (
