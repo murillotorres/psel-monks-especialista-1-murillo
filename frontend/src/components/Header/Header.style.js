@@ -38,6 +38,10 @@ export const HeaderContainer = styled.header`
     font-size: 20px;
     font-weight:300;
   }
+
+  .scrollback {
+    display:none;
+  }
     
   @media (max-width: 1100px) {
   .logo img {
@@ -51,7 +55,6 @@ export const HeaderContainer = styled.header`
   .menu {
     gap: 20px;
   }
-
 
   @media (max-width: 820px) {
     .container {
