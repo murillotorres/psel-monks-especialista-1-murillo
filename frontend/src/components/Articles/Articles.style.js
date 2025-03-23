@@ -65,7 +65,16 @@ export const ArticlesWrapper = styled.section`
       font-size:18px;
       line-height:25px;
     }
-
-
   } 
+
+    @media (max-width: 820px) {
+
+      .articles-app {
+        gap:30px 0px;
+      }
+      .item {
+        width: 100%;
+      }
+    }
+
 `;

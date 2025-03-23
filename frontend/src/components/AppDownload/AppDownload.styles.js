@@ -63,4 +63,31 @@ export const AppDownloadWrapper = styled.section`
       font-size: 20px;
     }
   }
+
+  @media (max-width: 820px) {
+    .content {
+      display:block;
+    }
+
+    .text {
+      width:100%;
+      padding:0px;
+      margin-bottom:30px;
+    }
+
+    .links {
+      width: 100%;
+      display:flex;
+      aling-items:center;
+      justify-content:center;
+      gap:0px 20px;
+    }
+
+    .links img {
+      width: 200px;
+    }
+
+
+  }
+
 `;

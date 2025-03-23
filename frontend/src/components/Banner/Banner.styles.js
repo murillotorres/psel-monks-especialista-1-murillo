@@ -55,7 +55,25 @@ export const BannerSection = styled.section`
     }
   }
 
+  @media (max-width: 1100px) {
+    .banner {
+      padding-top:150px;
+    }
 
+    h1 {
+      font-size: 40px;
+      max-width:500px;
+    }
+
+    p {
+      font-size: 20px;
+      max-width:450px;
+    }
+
+    .img {
+      top:-150px;
+    }
+  }
 
 
 `;

@@ -46,4 +46,14 @@ export const HeaderContainer = styled.header`
   .menu {
     gap: 20px;
   }
+
+  @media (max-width: 820px) {
+    .container {
+      display:block;
+    }
+      
+    .menu {
+      margin-top:20px;
+    }
+  }
 `;

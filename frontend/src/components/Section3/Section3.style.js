@@ -70,4 +70,18 @@ export const Section3Wrapper = styled.section`
     }
   }
 
+  @media (max-width: 1100px) {
+    .col-6 {
+      width:100%;
+    }
+
+    .img-space-full {
+      height: auto;
+    }
+    
+    .img-space-medium {
+      height: auto;
+    }
+  }
+
 `;
