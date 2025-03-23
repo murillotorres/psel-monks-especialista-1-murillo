@@ -4,10 +4,14 @@ export const BannerSection = styled.section`
   .banner {
     background-color: #2D2D2D;
     padding-top: 120px;
-    padding-bottom:150px;
+    padding-bottom:50px;
     overflow:hidden;
     border-radius:0px 0px 30px 30px;
     display:block;
+  }
+
+  .container {
+    padding-right:600px;
   }
 
   h1 {
@@ -31,8 +35,15 @@ export const BannerSection = styled.section`
     height: auto;
     display: block;
     position:absolute;
-    top:-120px;
+    top:-300px;
     right:0px;
+  }
+
+  .scroll {
+    display:block;
+    margin:auto;
+    margin-top:30px;
+
   }
 
   @media (max-width: 1380px) {
@@ -44,6 +55,7 @@ export const BannerSection = styled.section`
   @media (max-width: 1100px) {
     .img {
       right:-200px;
+      top:-300px;
     }
     
     h1 {
@@ -53,9 +65,7 @@ export const BannerSection = styled.section`
     p {
       max-width:500px;
     }
-  }
 
-  @media (max-width: 1100px) {
     .banner {
       padding-top:150px;
     }
@@ -70,15 +80,14 @@ export const BannerSection = styled.section`
       max-width:450px;
     }
 
-    .img {
-      top:-150px;
+    .container {
+      padding-right:400px;
     }
   }
 
   @media (max-width: 768px) {
     .banner {
       border-radius:0px;
-      padding-bottom:100px;
       padding-top:80px;
     }
 
@@ -94,6 +103,14 @@ export const BannerSection = styled.section`
     p {
       font-size:15px;
       max-width:195px;
+    }
+    
+    .container {
+      padding-right:30px;
+    }
+
+    .scroll {
+      margin-left:60px;
     }
   }
 

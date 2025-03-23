@@ -108,7 +108,7 @@ export const HeaderContainer = styled.header`
       background: #DFBBFE;
       display: block;
       padding-top: 53px;
-      padding-bottom: 15px;
+      padding-bottom: 30px;
       transition:0.5s;
     }
 
@@ -124,6 +124,13 @@ export const HeaderContainer = styled.header`
       font-size:20px;
       padding:15px 30px;
       font-weight:500;
+    }
+
+    .scrollback {
+      display:block;
+      margin:auto;
+      margin-top:30px;
+      width:80px;
     }
   }
 

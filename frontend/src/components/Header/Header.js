@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../api/axios";
 import { HeaderContainer } from "./Header.style";
 import menuMobile from "../../assets/image/menu-mobile.svg";
+import scrollBack from "../../assets/image/scroll-back.svg";
 
 function Header() {
   const [logo, setLogo] = useState("");
@@ -28,10 +29,13 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <div className="container">
-        {/* Adicionando a classe .content-active dentro da div .content */}
         <div className={`content ${isMenuOpen ? "content-active" : ""}`}>
           <a href="/" className="logo">
             {logo && <img src={logo} alt="Logotipo" />}
@@ -41,11 +45,11 @@ function Header() {
           </div>
         </div>
         <nav>
-          {/* Adicionando a classe .active-menu na div .menu */}
           <div className={`menu ${isMenuOpen ? "active-menu" : ""}`}>
             {menuItems.map((item, index) => (
               <a key={index} href={item.url}>{item.title}</a>
             ))}
+            <img src={scrollBack} alt="Scroll Back" className="scrollback" onClick={closeMenu} />
           </div>
         </nav>
       </div>

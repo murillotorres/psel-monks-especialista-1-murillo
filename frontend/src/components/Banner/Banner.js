@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/axios';
 import { BannerSection } from "./Banner.styles";
+import scroll from "../../assets/image/scroll-down.svg";
 
 function Banner() {
   const [bannerData, setBannerData] = useState(null);
@@ -30,6 +31,7 @@ function Banner() {
           ) : (
             <div>Imagem não disponível</div>
           )}
+          <img src={scroll} alt="Scroll" className="scroll" />
         </div>
       </div>
     </BannerSection>
