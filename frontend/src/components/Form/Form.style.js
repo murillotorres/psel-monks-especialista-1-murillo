@@ -143,9 +143,9 @@ export const FormWrapper = styled.section`
     line-height:10px;
   }
 
-    .captcha .input {
+  .captcha .input {
     max-width: 234px;
-    }
+  }
 
   .btn {
     padding: 13px 40px;
@@ -185,6 +185,32 @@ export const FormWrapper = styled.section`
     .form-box {
       max-width:100%;
     }
-    
   }
+
+  @media (max-width: 768px) {
+    .captcha {
+      flex-wrap:wrap;
+      gap:0px;
+    }
+
+    .input {
+      width:100%;
+    }
+    .captcha .challenge {
+      width:calc(50% - 30px);
+      padding:10px 20px;
+    }
+
+    .captcha span {
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .captcha .input {
+      width:calc(50% - 10px);
+    }
+
+
+  }
+
 `;

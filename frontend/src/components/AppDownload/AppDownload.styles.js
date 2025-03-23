@@ -86,8 +86,20 @@ export const AppDownloadWrapper = styled.section`
     .links img {
       width: 200px;
     }
-
-
   }
+
+    @media (max-width: 650px) {
+      .links {
+        display:block;
+      }
+      
+      .links a {
+        margin:auto;
+        width:200px;
+        margin-bottom:10px;
+      }
+
+    }
+
 
 `;

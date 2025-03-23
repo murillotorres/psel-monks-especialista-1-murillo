@@ -50,4 +50,17 @@ export const FooterContainer = styled.footer`
     max-width: 32px;
     max-height:32px;
   }
+
+  @media (max-width: 768px) {
+    .menu {
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .menu a {
+      font-size:17px;
+    }
+  }
+
+  
 `;

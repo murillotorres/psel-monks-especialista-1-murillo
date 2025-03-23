@@ -20,6 +20,13 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     position:relative;
   }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding:0px 30px;
+    }
+  }
+  
 `;
 
 export default GlobalStyles;

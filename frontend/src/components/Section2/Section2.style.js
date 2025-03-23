@@ -66,4 +66,12 @@ export const Section2Section = styled.section`
       width: calc(50% - 20px);
     }
   }
+
+  @media (max-width: 768px) {
+    .section2-app-item {
+      width: calc(100% - 20px);
+    }
+  }
+
+
 `;

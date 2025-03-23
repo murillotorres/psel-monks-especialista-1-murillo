@@ -37,4 +37,12 @@ export const TagSectionWrapper = styled.section`
       gap:15px;
     }
   }
+
+  @media (max-width: 768px) {
+   .tagsection-app div {
+      font-size:18px;
+      padding:10px 20px;
+    }
+  }
+    
 `;
