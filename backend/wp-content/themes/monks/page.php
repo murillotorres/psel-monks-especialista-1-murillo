@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+    header("Location: /wp-admin");
+    get_header();
+?>
 <div class="page-header">
     <div class="container">
         <h1><?php the_title(); ?></h1>
