@@ -61,8 +61,8 @@ Se quiser rodar o **frontend React** fora do Docker, instale o Node.js:
 
 ### 🔹 Clonar o repositório
 ```sh
-git clone SEU_REPOSITORIO.git
-cd SEU_REPOSITORIO
+git clone https://github.com/murillotorres/psel-monks-especialista-1-murillo.git
+cd monks-especialista-1-murillo
 ```
 
 ### 🔹 Rodar o projeto
