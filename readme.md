@@ -26,7 +26,21 @@ cd psel-monks-especialista-1-murillo
 docker-compose up -d
 ```
 
+Aguarde o Docker ser instalado, após isso:
+```bash
+cd .\frontend\
+npm install
+npm start
+```
+
+Aguarde as depêndencias da aplicação serem instaladas, e então inicie o front-end: 
+```bash
+npm start
+```
+
 ✅ O Wordpress agora está acessível em http://localhost:8000 
 ✅ O frontend, está rodando em: http://localhost:3000
 
-🔐 Utilize as credenciais informadas na Gupy para acessar o painel administrativo.
+🔐 Credenciais do Wordpress: 
+Usuário: murillo.monks
+Senha: murillo@@monks
