@@ -18,9 +18,9 @@ Nosso projeto precisa que sua máquina tenha:
 ## **Instalação do Projeto**
 1. Crie uma pasta chamada 'Monks' no disco local da sua máquina e através do seu console.
 
-Certifique-se que as portas 8000 e 3000 não esteja sendo utilizada por nenhuma outra aplicação antes do passo 2.
+Certifique-se que as portas 8000, 8080 e 3000 não esteja sendo utilizada por nenhuma outra aplicação.
 
-3. Execute o código abaixo para clonar o repositório, acessar a pasta do repositório e subir nosso container docker.
+2. Execute o código abaixo para clonar o repositório, acessar a pasta do repositório e subir nosso container docker.
 ```bash
 git clone https://github.com/murillotorres/psel-monks-especialista-1-murillo.git
 cd psel-monks-especialista-1-murillo
