@@ -21,7 +21,7 @@ Nosso projeto precisa que sua máquina tenha:
 
 2. Execute o código abaixo para clonar o repositório, acessar a pasta do repositório e subir nosso container docker.
 ```bash
-git clone [SEU_REPOSITORIO.git](https://github.com/murillotorres/psel-monks-especialista-1-murillo.git)
+git clone https://github.com/murillotorres/psel-monks-especialista-1-murillo.git
 cd monks-especialista-1-murillo
 docker-compose up -d
 ```
