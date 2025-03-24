@@ -12,6 +12,7 @@ services:
       MYSQL_PASSWORD: password
     volumes:
       - db_data:/var/lib/mysql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
   wordpress:
     image: wordpress:latest
@@ -27,6 +28,8 @@ services:
     volumes:
       - ./backend:/var/www/html
       - ./php.ini:/usr/local/etc/php/php.ini
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/bin/bash", "/entrypoint.sh"]
     ports:
       - "8000:80"
 
@@ -41,6 +44,17 @@ services:
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "8080:80"
+
+  frontend:
+    image: node:20
+    container_name: monks-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app # Monta o código do React
+      - /app/node_modules # Evita problemas de permissão no node_modules
+    command: ["npm", "run", "dev"] # Comando para rodar o frontend
+    ports:
+      - "3000:3000" # Porta do React
 
 volumes:
   db_data:
