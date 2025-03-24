@@ -40,7 +40,7 @@ Antes de rodar o projeto, instale os seguintes programas no seu computador:
 
 ---
 
-### ✅ 1.3 Node.js e npm (opcional)
+### ✅ 1.3 Node.js e npm
 Se quiser rodar o **frontend React** fora do Docker, instale o Node.js:
 
 - **Baixar o Node.js:** [https://nodejs.org/en](https://nodejs.org/en)  
