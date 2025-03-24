@@ -30,7 +30,6 @@ Aguarde o Docker ser instalado, após isso:
 ```bash
 cd .\frontend\
 npm install
-npm start
 ```
 
 Aguarde as depêndencias da aplicação serem instaladas, e então inicie o front-end: 
