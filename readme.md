@@ -56,7 +56,9 @@ Todos os itens disponíveis para edição estão organizados em abas.
 
 **Aparência do Site, Menus e Redes Sociais**
 Para fazer alterações nos menus do site, clique em **Aparência** >> **Menus** no menu lateral.
+
 Será exibido a tela padrão de alterações de menu do Wordpress, e você pode selecionar qual menu deseja alterar.
+
 
 Para controlar os links das redes sociais e demais elementos gráficos da página, clique em: **Aparência** >> **Opções do Tema** no menu lateral.
 
