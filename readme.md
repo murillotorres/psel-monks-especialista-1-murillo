@@ -13,8 +13,7 @@ Nosso projeto precisa que sua máquina tenha:
 - Docker e Docker Compose
 - Node.js e npm
 
-Instruções para instalar todas essas depêndencias: 
-(em breve colocarei o link do arquivo aqui)
+(Instruções para instalar todas essas depêndencias)[https://github.com/murillotorres/psel-monks-especialista-1-murillo/blob/main/install.md]
 
 ## **Instalação do Projeto**
 1. Crie uma pasta chamada 'Monks' no disco local da sua máquina e através do seu console.
