@@ -58,24 +58,32 @@ Se quiser rodar o **frontend React** fora do Docker, instale o Node.js:
 ---
 
 ## 🚀 2. Como rodar o projeto?
+## **Instalação do Projeto**
+1. Crie uma pasta chamada 'Monks' no disco local da sua máquina e através do seu console.
 
-### 🔹 Clonar o repositório
-```sh
+Certifique-se que as portas 8000, 8080 e 3000 não esteja sendo utilizada por nenhuma outra aplicação.
+
+2. Execute o código abaixo para clonar o repositório, acessar a pasta do repositório e subir nosso container docker.
+```bash
 git clone https://github.com/murillotorres/psel-monks-especialista-1-murillo.git
-cd monks-especialista-1-murillo
-```
-
-### 🔹 Rodar o projeto
-```sh
+cd psel-monks-especialista-1-murillo
 docker-compose up -d
 ```
 
-Agora o projeto estará rodando! 🎉
+Aguarde o Docker ser instalado, após isso:
+```bash
+cd .\frontend\
+npm install
+```
 
----
+Aguarde as depêndencias da aplicação serem instaladas, e então inicie o front-end: 
+```bash
+npm start
+```
 
-## 🌐 3. Como acessar?
+✅ O Wordpress agora está acessível em http://localhost:8000 
 
-- **Backend (WordPress):** [`http://localhost:8000`](http://localhost:8000)  
-- **Banco de Dados (phpMyAdmin):** [`http://localhost:8080`](http://localhost:8080)  
-- **Frontend (React):** [`http://localhost:3000`](http://localhost:3000)  
+✅ O frontend, está rodando em: http://localhost:3000
+
+🔐 Credenciais do Wordpress: 
+Usuário: murillo.monks
