@@ -4,7 +4,10 @@
 Este projeto é uma landing page dinâmica composta por um **backend em WordPress**, que funciona como painel administrativo da página e fornece uma API, e um **frontend em React**, que consome os dados dessa API em uma interface responsiva e moderna.
 Desenvolvido como parte de um teste técnico para a posição de desenvolvedor de software na empresa Monks.
 
+Para agilizar o processo, utilizei o ACF para criar campos de administração no Wordpress. Criei um tema personalizado para controlar as funções do sistema, e endpoints personalizados na API rest nativa do Wordpress. Apesar de frequentemente utilizar o plugin's de formulários, decidi criar o meu próprio plugin de formulário neste projeto, para melhor integração com os endpoints criados.
+
 Para começar, recomendo que crie uma pasta chamada Monks para o nosso projeto.
+
 
 ## **Requisitos Necessários**
 Para rodar o projeto na sua máquina local é necessário ter algumas depêndencias instaladas para rodar o Wordpress, MySQL e React.
