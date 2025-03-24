@@ -49,6 +49,7 @@ Senha: murillo@@monks
 
 ## **Como alterar as informações da Landing Page**
 Acesse o painel do Wordpress (http://localhost:8000/wp-admin) e clique **Páginas** no menu lateral.
+
 Passe o mouse sobre o item **Página Principal** e então clique em **Editar** 
 
 Todos os itens disponíveis para edição estão organizados em abas.
@@ -59,3 +60,6 @@ No painel do Wordpress, clique em **Contatos** no menu lateral.
 Será listado todos os contatos recebidos pelo formulário de contato da landing page.
 
 O código está propositalmente exibindo apenas 3 resultados por página para teste de paginação. 
+
+## **Duvidas, sugestões e melhorias**
+Você pode entrar em contato pelo meu perfil no [Linkedin](https://www.linkedin.com/in/murillottorres/).
