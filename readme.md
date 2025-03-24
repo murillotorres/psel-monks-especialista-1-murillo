@@ -36,6 +36,8 @@ cd .\frontend\
 npm install
 ```
 
+**Acesse o phpmyadmin (http://localhost:8081/) e execute a query do arquivo dump.sql** 
+
 Aguarde as depêndencias da aplicação serem instaladas, e então inicie o front-end: 
 ```bash
 npm start
@@ -46,6 +48,7 @@ npm start
 ✅ O frontend, está rodando em: http://localhost:3000
 
 🔐 Credenciais do Wordpress: 
+
 Usuário: murillo.monks
 
 Senha: murillo@@monks
