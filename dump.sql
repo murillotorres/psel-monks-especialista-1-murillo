@@ -1426,7 +1426,7 @@ CREATE TABLE `wp_users` (
 --
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
-(1, 'murillo.monks', '$P$BX2u6esryhctkphiVX/udgRx5YssqB.', 'murillo-monks', 'murillotttorres@live.com', 'http://localhost:8000', '2025-03-20 02:43:10', '', 0, 'murillo.monks');
+(1, 'murillo.monks', '$1$G68qwPW/$7XmtqiQDbirLPGK92aWnN/', 'murillo-monks', 'murillotttorres@live.com', 'http://localhost:8000', '2025-03-20 02:43:10', '', 0, 'murillo.monks');
 
 --
 -- Índices para tabelas despejadas
