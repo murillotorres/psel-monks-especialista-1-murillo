@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 -- Banco de dados: `wordpress`
 --
 
+CREATE DATABASE wordpress;
+USE wordpress;
+
 -- --------------------------------------------------------
 
 --
