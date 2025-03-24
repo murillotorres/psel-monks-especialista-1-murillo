@@ -39,11 +39,7 @@ services:
     container_name: react_container
     restart: always
     ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    command: ["npm", "run", "dev"]
+      - "3000:80"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
