@@ -1,60 +1,61 @@
 version: '3.8'
 
 services:
-  db:
-    image: mysql:5.7
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
     restart: always
-    container_name: monks-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    ports:
+      - "8080:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
       - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
   wordpress:
     image: wordpress:latest
+    container_name: wordpress_container
     restart: always
-    container_name: monks-wordpress
     depends_on:
-      - db
+      - mysql
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: mysql:3306
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: wordpress
-    volumes:
-      - ./backend:/var/www/html
-      - ./php.ini:/usr/local/etc/php/php.ini
-      - ./entrypoint.sh:/entrypoint.sh
-    entrypoint: ["/bin/bash", "/entrypoint.sh"]
     ports:
       - "8000:80"
+    volumes:
+      - ./backend:/var/www/html
+
+  react:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react_container
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: ["npm", "run", "dev"]
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
     restart: always
-    container_name: monks-phpmyadmin
     depends_on:
-      - db
+      - mysql
     environment:
-      PMA_HOST: db
+      PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "8080:80"
-
-  frontend:
-    image: node:20
-    container_name: monks-frontend
-    working_dir: /app
-    volumes:
-      - ./frontend:/app # Monta o código do React
-      - /app/node_modules # Evita problemas de permissão no node_modules
-    command: ["npm", "run", "dev"] # Comando para rodar o frontend
-    ports:
-      - "3000:3000" # Porta do React
+      - "8081:80"
 
 volumes:
-  db_data:
+  mysql_data:
