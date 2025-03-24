@@ -44,4 +44,5 @@ npm start
 
 🔐 Credenciais do Wordpress: 
 Usuário: murillo.monks
+
 Senha: murillo@@monks
